@@ -1,0 +1,57 @@
+<html>
+
+<head>
+    <title>Java Dnemeleri Kenarlık hesaplama</title>
+</head>
+
+<body>
+    <input type="color" id="renk" name="fname" value=""><br>
+    <label for="fname">1. Sayıyı Giriniz:</label><br>
+    <input type="text" id="ukenar" name="fname" value=""><br>
+    <label for="lname">2. Sayıyı Giriniz:</label><br>
+    <input type="text" id="kkenar" name="lname" value=""><br><br>
+    <input type="submit" id="btn" value="Hesapla">
+    <h1>Sonuç:</h1>
+
+    <p id="renk"></p>
+    <p id="sonuc"></p>
+    <p id="ukenar"></p>
+    <p id="kkenar"></p>
+    <p id="alan"></p>
+    <p id="cevre"></p>
+
+    <script>
+        var btnCiz = document.getElementById("btn");
+        btnCiz.onclick = function () {
+            document.getElementById("sonuc").style.backgroundColor =
+                document.getElementById("renk").value;
+            document.getElementById("sonuc").style.width =
+                Number(document.getElementById("kkenar").value) + "px";
+            document.getElementById("sonuc").style.height =
+                Number(document.getElementById("ukenar").value) + "px";
+            document.getElementById("alan").innerHTML = Number(document.getElementById("kkenar").value)
+                document.getElementById("cevre").innerHTML = Number(document.getElementById("ukenar").value);
+        }
+    </script>
+
+       
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>

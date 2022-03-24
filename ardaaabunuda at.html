@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soru</title>
+    <style>
+        body {
+            background-image: url('arkaplans.jpg');
+        }
+
+        #kutu {
+            border-radius: 10px;
+            border-style: solid;
+            width: 1000px;
+            height: 350px;
+            background-color: rgb(0, 132, 255);
+            margin: 150px;
+        }
+
+        #soru {
+            margin-left: 90px;
+            margin-top: 10px;
+            border-radius: 5px;
+            border-style: solid;
+            width: 800px;
+            height: 200px;
+            background-color: rgb(0, 204, 255);
+        }
+
+        #yazi {
+            margin-top: 10px;
+            font-size: 35px;
+            text-align: center;
+        }
+
+        #buton {
+            background-color: rgb(45, 45, 167);
+            color: black;
+            border-color: black;
+            border-style: solid;
+            border-radius: 2px;
+            display: flex;
+            margin-left: 90px;
+            margin-top: 4px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="kutu">
+        <div id="soru">
+            <div id="yazi" onclick="rastgele_soru_sec()">BAŞLA</div>
+        </div>
+        <button id="buton" onclick="return window.confirm('Doğru Bildin!');">A-)</button>
+        <button id="buton" onclick="return window.confirm('Yanlış Bildin!');">B-)</button>
+        <button id="buton" onclick="return window.confirm('Yanlış Bildin!');">C-)</button>
+
+
+
+    </div>
+    <script>
+        var sorular = [
+            "Türkiye'nin Başkenti Neresidir?<br>A-Ankara<br>B-Moskava<br>C-Berlin",
+            "Osmanlı'nın Kurucusu Kimdir?<br>A-Osman<br>B-Orhan<br>C-Mehmet",
+            "Cumhuriyetin Kuruluş Tarihi?<br>A-1923<br>B-1921<br>C-1922"
+        ];
+
+        function rastgele_soru_sec() {
+            var soru_sayisi = sorular.length;
+
+            var rasgele_sayi_tut = Math.floor(Math.random() * soru_sayisi);
+            document.getElementById("yazi").innerHTML =
+                sorular[rasgele_sayi_tut];
+            swal({
+                title: "Soruyu Pas geçmek istediğinden emin misin?",
+                text: "!",
+                icon: "warning",
+                buttons: true,
+                dangerMode: true,
+            })
+                .then((willDelete) => {
+                    if (willDelete) {
+                        swal("Geçtin!", {
+                            icon: "success",
+                        });
+                    } else {
+                        swal("Geçmedin!");
+                    }
+                });
+        }
+    </script>
+
+
+
+
+
+
+</body>
+
+</html>

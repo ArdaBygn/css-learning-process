@@ -1,0 +1,64 @@
+<html>
+
+<head>
+    <title>Java Dnemeleri Kenarlık hesaplama</title>
+</head>
+
+<body>
+    <input type="color" id="myColor" name="fname" value=""><br>
+    <label for="fname">1. Sayıyı Giriniz:</label><br>
+    <input type="text" id="kenar1" name="fname" value=""><br>
+    <label for="lname">2. Sayıyı Giriniz:</label><br>
+    <input type="text" id="kenar2" name="lname" value=""><br><br>
+    <input type="submit" id="buton" value="Hesapla">
+    <h1>Sonuç:</h1>
+
+    <p id="renk"></p>
+    <p id="sonuc"></p>
+    <div id="k1"></div>
+    <div id="k2"></div>
+    <p id="alan"></p>
+    <p id="cevre"></p>
+
+    <script>
+        function hesapla() {
+            
+            var  defaultRenk = document.getElementById("myColor").value;
+            
+            
+            var knr1=Number(document.getElementById("kenar1").value);
+			var knr2=Number(document.getElementById("kenar2").value);
+			
+           	var alan=knr1*knr2;
+			var cevre=(knr1+knr2)*2;
+           
+           	document.getElementById("renk").innerHTML = "Renk degeri:"+ defaultRenk;
+            document.getElementById("alan").innerHTML = "Alan:"+ alan;
+            document.getElementById("cevre").innerHTML = "Cevre:"+cevre;
+            
+            document.getElementById("k1").innerHTML = "Kenar1:"+ knr1;
+            document.getElementById("k2").innerHTML = "Kenar2:"+ knr2;
+        }
+        
+        
+        var btnCiz = document.getElementById("buton");
+        btnCiz.onclick = hesapla;
+          
+    </script>
+
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
